@@ -63,7 +63,7 @@ fun SignUpScreenContent(
     password: String,
     onPasswordChange: (String) -> Unit,
     onSignUpClicked: () -> Unit,
-    isLoading:Boolean = false
+    isLoading: Boolean = false
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize()
@@ -77,19 +77,26 @@ fun SignUpScreenContent(
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = email,
-                onValueChange = onEmailChange
+                onValueChange = onEmailChange,
+                label = {
+                    Text(text = "Email")
+                }
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = password,
-                onValueChange = onPasswordChange
+                onValueChange = onPasswordChange,
+                label = {
+                    Text(text = "Password")
+                }
             )
             AnimatedVisibility(visible = !isLoading) {
                 Button(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(8.dp),
-                    onClick = onSignUpClicked) {
+                    onClick = onSignUpClicked
+                ) {
                     Text(text = "Sign Up")
                 }
             }

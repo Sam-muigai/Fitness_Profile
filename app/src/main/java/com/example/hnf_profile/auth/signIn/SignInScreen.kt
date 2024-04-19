@@ -80,13 +80,19 @@ fun SignInScreenContent(
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = email,
-                onValueChange = onEmailChange
+                onValueChange = onEmailChange,
+                label = {
+                    Text(text = "Email")
+                }
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = password,
-                onValueChange = onPasswordChange
+                onValueChange = onPasswordChange,
+                label = {
+                    Text(text = "Password")
+                }
             )
             AnimatedVisibility(visible = !isLoading) {
                 Button(
